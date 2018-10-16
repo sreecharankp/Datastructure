@@ -39,6 +39,31 @@ public class BinaryTree {
             }
         }
 
+        public void traversePreorder() {
+            System.out.print(data + " ,");
+
+            if (leftChild != null) {
+                leftChild.traversePreorder();
+            }
+
+            if (rightChild != null) {
+                rightChild.traversePreorder();
+            }
+        }
+
+        public void traversePostorder() {
+
+            if (leftChild != null) {
+                leftChild.traversePostorder();
+            }
+
+            if (rightChild != null) {
+                rightChild.traversePostorder();
+            }
+
+            System.out.print(data + " ,");
+        }
+
         public TreeNode get(int value) {
             if (data == value) {
                 return this;
@@ -111,6 +136,18 @@ public class BinaryTree {
         public void traverseInorder() {
             if (root != null) {
                 root.traverseInorder();
+            }
+        }
+
+        public void traversePreorder() {
+            if (root != null) {
+                root.traversePreorder();
+            }
+        }
+
+        public void traversePostorder() {
+            if (root != null) {
+                root.traversePostorder();
             }
         }
 
@@ -203,6 +240,10 @@ public class BinaryTree {
          */
 
         intTree.traverseInorder();
+        System.out.println();
+        intTree.traversePreorder();
+        System.out.println();
+        intTree.traversePostorder();
         System.out.println();
         System.out.println(intTree.min());
         System.out.println(intTree.max());
